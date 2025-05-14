@@ -1,24 +1,220 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navbar - Hill Climbing y Algoritmos Evolutivos</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proyectos de Optimización</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-nxP1P5OqtF4oJhd+9n4WcY/6m7+XzXhGpKfwIXiZlD1m5F/4A0lBPHrkibvj+U8OxB9+5z7nOeXJ2JzpMj0YZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #fdeff9 0%, #e1f5fe 100%);
+      color: #333;
+    }
+
+    header {
+      background-color: #f8bbd0;
+      padding: 3rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-bottom: 5px solid #f48fb1;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: #6a1b9a;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: #fff0f6;
+      border-radius: 25px;
+      padding: 2rem;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+    }
+
+    .card h2 {
+      color: #ab47bc;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .card p {
+      color: #666;
+      font-size: 1rem;
+    }
+
+    .card i {
+      font-size: 3rem;
+      color: #f06292;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background-color: #fce4ec;
+      padding: 2.5rem 1.5rem;
+      font-family: 'Poppins', sans-serif;
+      color: #4e2a57;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      margin-top: 4rem;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-left,
+    .footer-right {
+      flex: 1 1 45%;
+      padding: 0 1rem;
+    }
+
+    .footer-left h2 {
+      font-size: 1.6rem;
+      color: #6a1b9a;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-left p {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    .footer-right h3 {
+      font-size: 1.4rem;
+      color: #6a1b9a;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-right ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-right li {
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: #7a4f97;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-left,
+      .footer-right {
+        flex: 1 1 100%;
+        padding: 1rem 0;
+      }
+    }
+  </style>
+  <script>
+    function goTo(url) {
+      window.location.href = url;
+    }
+  </script>
 </head>
 <body>
 
   <header>
-    <nav>
-      <div class="logo">Optimizadores</div>
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-      <div class="nav-links" id="navLinks">
-        <a href="#">Hill Climbing</a>
-        <a href="#">Algoritmos Evolutivos Genéticos</a>
-      </div>
-    </nav>
+    <h1><i class="fas fa-magic"></i> Proyectos de Optimización Inteligente</h1>
+    <p>Explora los enunciados aplicando algoritmos inteligentes</p>
   </header>
 
-  <script src="java.js"></script>
+  <main class="container">
+    <div class="card" onclick="goTo('enunciado1.html')">
+      <i class="fas fa-network-wired"></i>
+      <h2>Enunciado 1</h2>
+      <p>Organigrama sobre Hill Climbing + infografía de algoritmos genéticos.</p>
+    </div>
+
+    <div class="card" onclick="goTo('enunciado2.html')">
+      <i class="fas fa-calendar-check"></i>
+      <h2>Enunciado 2</h2>
+      <p>Optimización del horario de estudio en base a productividad semanal.</p>
+    </div>
+
+    <div class="card" onclick="goTo('enunciado3.html')">
+      <i class="fas fa-utensils"></i>
+      <h2>Enunciado 3</h2>
+      <p>Selección de platos del menú universitario sin pasar de calorías ni presupuesto.</p>
+    </div>
+
+    <div class="card" onclick="goTo('enunciado4.html')">
+      <i class="fas fa-book-open"></i>
+      <h2>Enunciado 4</h2>
+      <p>Elección óptima de cursos electivos según afinidad y carga horaria.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <h2><i class="fas fa-code-branch"></i> Curso: ALGORITMOS EVOLUTIVOS</h2>
+        <p><strong>Docente:</strong> Ms. Johan Max A. López Heredia</p>
+      </div>
+
+      <div class="footer-right">
+        <h3><i class="fas fa-users"></i> Integrantes:</h3>
+        <ul>
+          <li>Guevara Felipe Javier Valentino</li>
+          <li>Portal Ibañez Anderson Dica</li>
+          <li>Trejo Obregón Rodrigo</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Todos los derechos reservados</p>
+    </div>
+  </footer>
+
 </body>
 </html>

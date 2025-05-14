@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enunciado 2 - Optimización de Horario</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff0f5;
+      color: #4e2a57;
+      padding: 2rem;
+    }
+
+    header {
+      background: #f8bbd0;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header i {
+      font-size: 2rem;
+      color: #6a1b9a;
+      margin-bottom: 0.5rem;
+    }
+
+    .card {
+      background: #ffffff;
+      margin: 2rem auto;
+      padding: 2.5rem;
+      max-width: 900px;
+      border-radius: 20px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section i {
+      color: #ab47bc;
+      margin-right: 0.7rem;
+    }
+
+    .section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #6a1b9a;
+      display: flex;
+      align-items: center;
+    }
+
+    .section p, .section ul {
+      font-size: 1.05rem;
+      margin-left: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section ul {
+      list-style-type: square;
+      padding-left: 1.5rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background-color: #f48fb1;
+      border: none;
+      padding: 1rem 2rem;
+      color: white;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      transition: background 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #f06292;
+    }
+
+    footer {
+      background-color: #f8bbd0;
+      padding: 2.5rem 1.5rem;
+      color: #4e2a57;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      margin-top: 4rem;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .footer-left,
+    .footer-right {
+      flex: 1 1 45%;
+      padding: 1rem;
+    }
+
+    .footer-left h2, .footer-right h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #6a1b9a;
+    }
+
+    .footer-right ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    .footer-right li::before {
+      content: "👤 ";
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-left, .footer-right {
+        flex: 1 1 100%;
+      }
+
+      .section h2 {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <i class="fas fa-clock"></i>
+    <h1>Enunciado 2</h1>
+    <p>Optimización del Horario de Estudio con Hill Climbing</p>
+  </header>
+
+  <section class="card">
+
+    <div class="section">
+      <h2><i class="fas fa-info-circle"></i> Contexto del Problema</h2>
+      <p>El estudiante dispone de 10 franjas horarias semanales, cada una con una duración en horas y un nivel de productividad (1 a 10).</p>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-bullseye"></i> Objetivo</h2>
+      <p>Seleccionar las franjas más productivas sin superar un límite total de 15 horas.</p>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-cogs"></i> Metodología</h2>
+      <ul>
+        <li>Generación de una solución aleatoria.</li>
+        <li>Evaluación de productividad total bajo restricción de tiempo.</li>
+        <li>Mejora iterativa mediante mutaciones controladas (Hill Climbing).</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2><i class="fas fa-tools"></i> Herramientas Utilizadas</h2>
+      <ul>
+        <li><strong>Pandas</strong> para modelar los datos de franjas horarias.</li>
+        <li><strong>NumPy</strong> para aplicar mutaciones y operaciones numéricas.</li>
+      </ul>
+    </div>
+
+    <div class="buttons">
+      <a class="btn" href="ejercicio2.py" download>
+        <i class="fas fa-file-code"></i> Ver Ejercicio
+      </a>
+      <a class="btn" href="index.html">
+        <i class="fas fa-home"></i> Volver al Inicio
+      </a>
+    </div>
+
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <h2><i class="fas fa-graduation-cap"></i> Curso: ALGORITMOS EVOLUTIVOS</h2>
+        <p><strong>Docente:</strong> Ms. Johan Max A. López Heredia</p>
+      </div>
+      <div class="footer-right">
+        <h3><i class="fas fa-users"></i> Integrantes:</h3>
+        <ul>
+          <li>Guevara Felipe Javier Valentino</li>
+          <li>Portal Ibañez Anderson Dica</li>
+          <li>Trejo Obregón Rodrigo</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Proyecto académico de optimización. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enunciado 1 - Organigrama e Infografía</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #fce4ec, #e1f5fe);
+      color: #333;
+    }
+    header {
+      background-color: #f8bbd0;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      color: #6a1b9a;
+      font-size: 2.5rem;
+    }
+    header p {
+      color: #555;
+      font-size: 1.1rem;
+    }
+    .section {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .section h2 {
+      color: #ab47bc;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .organigrama {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .organigrama ul {
+      padding-left: 0;
+      list-style: none;
+    }
+    .organigrama li {
+      background: #fce4ec;
+      border: 2px solid #f48fb1;
+      padding: 1rem;
+      margin: 0.5rem;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .organigrama li::before {
+      content: '\f0da';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      margin-right: 0.5rem;
+      color: #880e4f;
+    }
+    .infografia {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .info-card {
+      background-color: #e1bee7;
+      padding: 1.5rem;
+      border-radius: 15px;
+      color: #4a148c;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+    .info-card:hover {
+      transform: translateY(-5px);
+    }
+    .info-card i {
+      font-size: 2.5rem;
+      color: #880e4f;
+      margin-bottom: 0.5rem;
+    }
+    .volver-inicio {
+      display: block;
+      width: fit-content;
+      margin: 2rem auto 0;
+      padding: 0.75rem 1.5rem;
+      background-color: #f48fb1;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    .volver-inicio:hover {
+      background-color: #ec407a;
+    }
+    footer {
+      background-color: #fce4ec;
+      padding: 2rem;
+      margin-top: 3rem;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      color: #6a1b9a;
+    }
+    footer .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    footer .footer-left,
+    footer .footer-right {
+      flex: 1 1 45%;
+      margin-bottom: 1rem;
+    }
+    footer h3, footer h4 {
+      margin-bottom: 0.5rem;
+    }
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+    footer ul li {
+      margin-bottom: 0.3rem;
+    }
+    footer .footer-bottom {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #7a4f97;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-project-diagram"></i> Enunciado 1: Hill Climbing y Algoritmos Genéticos</h1>
+    <p>Organigrama explicativo e infografía completa sobre algoritmos inteligentes</p>
+  </header>
+
+  <section class="section">
+    <h2><i class="fas fa-sitemap"></i> Organigrama de Hill Climbing</h2>
+    <div class="organigrama">
+      <ul>
+        <li>Inicio</li>
+        <li>Generar solución inicial</li>
+        <li>Evaluar solución actual</li>
+        <li>Generar vecino</li>
+        <li>¿Vecino mejor?</li>
+        <ul>
+          <li>Sí → Reemplazar solución actual</li>
+          <li>No → Fin</li>
+        </ul>
+        <li>Repetir hasta óptimo o condición de parada</li>
+        <li>Fin</li>
+      </ul>
+    </div>
+    <a href="index.html" class="volver-inicio"><i class="fas fa-arrow-left"></i> Volver al Inicio</a>
+  </section>
+
+  <section class="section">
+    <h2><i class="fas fa-chart-pie"></i> Infografía de Algoritmos Genéticos</h2>
+    <div class="infografia">
+      <div class="info-card">
+        <i class="fas fa-dna"></i>
+        <h3>¿Qué es?</h3>
+        <p>Inspirado en la evolución biológica. Utiliza selección, cruza y mutación para optimizar soluciones. Imitan el proceso natural de evolución para resolver problemas complejos.</p>
+      </div>
+      <div class="info-card">
+        <i class="fas fa-users"></i>
+        <h3>Población Inicial</h3>
+        <p>Se crea un conjunto de soluciones aleatorias que representan diferentes individuos.</p>
+      </div>
+      <div class="info-card">
+        <i class="fas fa-bolt"></i>
+        <h3>Evaluación</h3>
+        <p>Cada individuo se evalúa usando una función de aptitud (fitness) que determina qué tan buena es la solución.</p>
+      </div>
+      <div class="info-card">
+        <i class="fas fa-random"></i>
+        <h3>Selección</h3>
+        <p>Se eligen los mejores individuos según su fitness para reproducirse, fomentando la supervivencia de los más aptos.</p>
+      </div>
+      <div class="info-card">
+        <i class="fas fa-exchange-alt"></i>
+        <h3>Cruzamiento</h3>
+        <p>Los padres seleccionados se combinan para generar descendencia que hereda características de ambos.</p>
+      </div>
+      <div class="info-card">
+        <i class="fas fa-bug"></i>
+        <h3>Mutación</h3>
+        <p>Se introducen pequeñas modificaciones aleatorias para mantener la diversidad genética y evitar estancamientos.</p>
+      </div>
+      <div class="info-card">
+        <i class="fas fa-trophy"></i>
+        <h3>Mejor Solución</h3>
+        <p>Se repite el ciclo de evolución hasta encontrar la solución óptima o hasta que se cumpla una condición de parada.</p>
+      </div>
+    </div>
+    <a href="index.html" class="volver-inicio"><i class="fas fa-arrow-left"></i> Volver al Inicio</a>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <h3>Curso: ALGORITMOS EVOLUTIVOS</h3>
+        <p><strong>Docente:</strong> Ms. Johan Max A. López Heredia</p>
+      </div>
+      <div class="footer-right">
+        <h4>Integrantes:</h4>
+        <ul>
+          <li>Guevara Felipe Javier Valentino</li>
+          <li>Portal Ibañez Anderson Dica</li>
+          <li>Trejo Obregón Rodrigo</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Todos los derechos reservados</p>
+    </div>
+  </footer>
+</body>
+</html>
